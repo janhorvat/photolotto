@@ -34,14 +34,21 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+                alert("device ready");
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         //var parentElement = document.getElementById(id);
 
         $( "#take-a-photo" ).click(function() {
-            navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-            destinationType: Camera.DestinationType.FILE_URI });
+            alert("take a photo action");
+            navigator.camera.getPicture(
+                onSuccess,
+                onFail, {
+                    quality: 50,
+                    destinationType: Camera.DestinationType.FILE_URI
+                }
+            );
         });
 
         function onSuccess(imageURI) {
