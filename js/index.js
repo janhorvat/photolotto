@@ -37,19 +37,21 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        //var parentElement = document.getElementById(id);
-
         $("#take-a-photo").click(function() {
             navigator.camera.getPicture(
                 onSuccess,
                 onFail, {
                     quality: 50,
+                    targetWidth: 1280,
+                    targetHeight: 1280,
                     destinationType: Camera.DestinationType.FILE_URI
                 }
             );
         });
 
         function onSuccess(imageURI) {
+            $("#loader").css("display", "block");
+            $("#photo").css("display", "none");
             var options = new FileUploadOptions();
             options.fileKey="file";
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -68,7 +70,8 @@ var app = {
         function win(r) {
             var res = jQuery.parseJSON(r.response);
             console.log(res.picture);
-            $('#photo').attr('src', res.picture);
+            $("#loader").css("display", "none");
+            $("#photo").css("display", "block").attr('src', res.picture);
         }
 
         function fail(error) {
