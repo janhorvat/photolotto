@@ -4,7 +4,7 @@
   <author href="http://photolotto.com" email="jan.horvat@gmail.com">Jan Horvat</author>
   <content src="index.html"/>
 
-  <plugin name="org.apache.cordova.camera" spec="0.2.3" source="pgb" />
+
   <gap:plugin name="org.apache.cordova.camera"/>
 
   <preference name="permissions" value="none"/>
