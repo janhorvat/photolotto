@@ -34,14 +34,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-                alert("device ready");
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         //var parentElement = document.getElementById(id);
 
-        $( "#take-a-photo" ).click(function() {
-            alert("take a photo action");
+        $("#take-a-photo").click(function() {
             navigator.camera.getPicture(
                 onSuccess,
                 onFail, {
@@ -74,7 +72,7 @@ var app = {
         }
 
         function fail(error) {
-            console.log("An error has occurred: Code = " = error.code);
+            //console.log("An error has occurred: Code = " = error.code);
         }
 
         function onFail(message) {
