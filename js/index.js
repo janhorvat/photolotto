@@ -64,7 +64,7 @@ var app = {
             options.params = params;
             options.chunkedMode = false;
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://recip.herokuapp.com/api/v1/photos/upload", win, fail, options);
+            ft.upload(imageURI, "http://ec2-52-58-16-37.eu-central-1.compute.amazonaws.com/api/v1/photos/upload", win, fail, options);
         }
 
         function win(r) {
