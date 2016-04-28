@@ -39,10 +39,10 @@ var app = {
     receivedEvent: function(id) {
 
         $("#share-button").click(function() {
+            console.log("share butto2n");
                 var options = {
           message: 'share this', // not supported on some apps (Facebook, Instagram)
           subject: 'the subject', // fi. for email
-          files: ['', ''], // an array of filenames either locally or remotely
           url: 'https://www.website.com/foo/#bar?a=b',
           chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
         }
