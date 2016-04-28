@@ -16,7 +16,9 @@
             </div>
             <div id="deviceready" class="content">
                 <p>Take photo to receive a photo</p>
+                    <a href="#" id="share-button">share</a>
                 <div class="photo-wrapper">
+                <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
                     <div id="loader"><img src="img/loading.gif" width="50" /></div>
                     <img id="photo" src="img/no-photo.png" />
                 </div>
@@ -30,6 +32,7 @@
         </script>
     </body>
     <div class="footer">
+
         <img id="take-a-photo" src="img/logo.png" height="70"/>
     </div>
 </html>
