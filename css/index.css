@@ -64,7 +64,7 @@ body {
     display: none;
 }
 
-#share-twitter {
+#share-twitter, #share-facebook, #share-instagram {
     display: none;
 }
 

@@ -68,22 +68,27 @@ var app = {
             $("#photo").css("display", "block").attr('src', res.picture);
             $(".share-toolbar").css("display", "block");
 
-            if(device.platform === 'iOS') {
+            if (device.platform === 'iOS') {
                 twitter = 'twitter://';
-            }
-            else if(device.platform === 'Android') {
+                facebook = 'facebook://';
+                instagram = 'instagram://';
+            } else if (device.platform === 'Android') {
                 twitter = 'com.twitter.android';
+                facebook = 'com.facebook.android';
+                instagram = 'com.instagram.android';
             }
 
-            appAvailability.check(
-                twitter,
-                function() {
-                    $("#share-twitter").css("display", "block")
-                },
-                function() {
+            appAvailability.check(twitter, function() {
+                $("#share-twitter").css("display", "block")
+            });
 
-                }
-            );
+            appAvailability.check(facebook, function() {
+                $("#share-facebook").css("display", "block")
+            });
+
+            appAvailability.check(instagram, function() {
+                $("#share-instagram").css("display", "block")
+            });
         }
 
         function fail(error) {
