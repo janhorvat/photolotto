@@ -13,10 +13,6 @@ var app = {
     },
 
     receivedEvent: function(id) {
-
-
-
-
         $("#share-twitter").click(function() {
             window.plugins.socialsharing.shareViaTwitter('via PhotoLotto', $('#photo').attr('src'), "http://photolotto.io");
         });
@@ -60,8 +56,6 @@ var app = {
             ft.upload(imageURI, "http://ec2-52-58-16-37.eu-central-1.compute.amazonaws.com/api/v1/photos/upload", win, fail, options);
         }
 
-
-
         function win(r) {
             var res = jQuery.parseJSON(r.response);
             $("#loader").css("display", "none");
@@ -70,11 +64,11 @@ var app = {
 
             if (device.platform === 'iOS') {
                 twitter = 'twitter://';
-                facebook = 'facebook://';
+                facebook = 'fb://';
                 instagram = 'instagram://';
             } else if (device.platform === 'Android') {
                 twitter = 'com.twitter.android';
-                facebook = 'com.facebook.android';
+                facebook = 'com.facebook.katana';
                 instagram = 'com.instagram.android';
             }
 

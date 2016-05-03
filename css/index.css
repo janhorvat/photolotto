@@ -62,10 +62,12 @@ body {
 .share-toolbar {
     margin-top: 20px;
     display: none;
+    text-align: center;
 }
 
 #share-twitter, #share-facebook, #share-instagram {
     display: none;
+    margin: 0 auto;
 }
 
 /* Landscape layout (with min-width) */
