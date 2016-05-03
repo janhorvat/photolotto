@@ -13,6 +13,27 @@ var app = {
     },
 
     receivedEvent: function(id) {
+
+
+        if(device.platform === 'iOS') {
+            scheme = 'twitter://';
+        }
+        else if(device.platform === 'Android') {
+            scheme = 'com.twitter.android';
+        }
+
+        appAvailability.check(
+            scheme,       // URI Scheme or Package Name
+            function() {  // Success callback
+                alert(scheme + ' is available :)');
+            },
+            function() {  // Error callback
+                alert(scheme + ' is not available :(');
+            }
+        );
+
+
+
         $("#share-twitter").click(function() {
             window.plugins.socialsharing.shareViaTwitter('via PhotoLotto', $('#photo').attr('src'), "http://photolotto.io");
         });
