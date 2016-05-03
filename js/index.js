@@ -39,15 +39,20 @@ var app = {
     receivedEvent: function(id) {
 
         $("#share-instagram").click(function() {
-            window.plugins.socialsharing.shareViaInstagram(
-                'Message via Instagram',
-                'https://www.google.nl/images/srpr/logo4w.png',
-                function() {
-                    console.log('share ok')
-                }, function(errormsg){
-                    alert(errormsg)
-                }
-            );
+
+            photoSource = $('#photo').attr('src');
+
+            if (photoSource != "img/no-photo.png") {
+                window.plugins.socialsharing.shareViaInstagram(
+                    'Message via Instagram',
+                    photoSource,
+                    function() {
+                        console.log('share ok')
+                    }, function(errormsg){
+                        alert(errormsg)
+                    }
+                );
+            }
         });
 
         $("#take-a-photo").click(function() {
