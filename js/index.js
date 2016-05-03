@@ -13,7 +13,7 @@ var app = {
     },
 
     receivedEvent: function(id) {
-
+var scheme;
 
         if(device.platform === 'iOS') {
             scheme = 'twitter://';

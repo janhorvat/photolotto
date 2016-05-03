@@ -9,6 +9,8 @@
   <gap:plugin name="org.apache.cordova.file" />
   <gap:plugin name="org.apache.cordova.file-transfer" />
   <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+  <gap:plugin name="org.apache.cordova.device" source="pgb" />
+  <gap:plugin name="com.ohh2ahh.plugins.appavailability" />
 
   <icon src="icon.png" />
   <icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/icon-36-ldpi.png" />
