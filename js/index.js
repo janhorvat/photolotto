@@ -38,21 +38,16 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
 
+        $("#share-twitter").click(function() {
+            window.plugins.socialsharing.shareViaInstagram('via PhotoLotto', $('#photo').attr('src'), "http://photolotto.io");
+        });
+
+        $("#share-facebook").click(function() {
+            window.plugins.socialsharing.shareViaInstagram('via PhotoLotto', $('#photo').attr('src'), "http://photolotto.io");
+        });
+
         $("#share-instagram").click(function() {
-
-            photoSource = $('#photo').attr('src');
-
-            if (photoSource != "img/no-photo.png") {
-                window.plugins.socialsharing.shareViaInstagram(
-                    'Message via Instagram',
-                    photoSource,
-                    function() {
-                        console.log('share ok')
-                    }, function(errormsg){
-                        alert(errormsg)
-                    }
-                );
-            }
+            window.plugins.socialsharing.shareViaInstagram('via PhotoLotto', $('#photo').attr('src'), "http://photolotto.io");
         });
 
         $("#take-a-photo").click(function() {
@@ -91,6 +86,7 @@ var app = {
             console.log(res.picture);
             $("#loader").css("display", "none");
             $("#photo").css("display", "block").attr('src', res.picture);
+            $(".share-toolbar").css("display", "block").attr('src', res.picture);
         }
 
         function fail(error) {

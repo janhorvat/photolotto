@@ -17,15 +17,14 @@
             <div id="deviceready" class="content">
                 <p>Take photo to receive a photo</p>
 
-                <button onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')">Twitter</button>
-
-                <button onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Facebook</button>
-
-                <button id="share-instagram">Instagram</button>
-
                 <div class="photo-wrapper">
                     <div id="loader"><img src="img/loading.gif" width="50" /></div>
                     <img id="photo" src="img/no-photo.png" />
+                    <div class="share-toolbar">
+                        <img src="img/twitter-icon.png" width="50" id="share-twitter">
+                        <img src="img/facebook-icon.png" width="50" id="share-facebook">
+                        <img src="img/instagram-icon.png" width="50" id="share-instagram">
+                    </div>
                 </div>
             </div>
         </div>
