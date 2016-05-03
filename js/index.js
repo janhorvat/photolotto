@@ -13,24 +13,7 @@ var app = {
     },
 
     receivedEvent: function(id) {
-var scheme;
 
-        if(device.platform === 'iOS') {
-            scheme = 'twitter://';
-        }
-        else if(device.platform === 'Android') {
-            scheme = 'com.twitter.android';
-        }
-
-        appAvailability.check(
-            scheme,       // URI Scheme or Package Name
-            function() {  // Success callback
-                alert(scheme + ' is available :)');
-            },
-            function() {  // Error callback
-                alert(scheme + ' is not available :(');
-            }
-        );
 
 
 
@@ -77,11 +60,30 @@ var scheme;
             ft.upload(imageURI, "http://ec2-52-58-16-37.eu-central-1.compute.amazonaws.com/api/v1/photos/upload", win, fail, options);
         }
 
+
+
         function win(r) {
             var res = jQuery.parseJSON(r.response);
             $("#loader").css("display", "none");
             $("#photo").css("display", "block").attr('src', res.picture);
-            $(".share-toolbar").css("display", "block").attr('src', res.picture);
+            $(".share-toolbar").css("display", "block");
+
+            if(device.platform === 'iOS') {
+                twitter = 'twitter://';
+            }
+            else if(device.platform === 'Android') {
+                twitter = 'com.twitter.android';
+            }
+
+            appAvailability.check(
+                twitter,
+                function() {
+                    $("#share-twitter").css("display", "block")
+                },
+                function() {
+
+                }
+            );
         }
 
         function fail(error) {
