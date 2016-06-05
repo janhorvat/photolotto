@@ -62,12 +62,12 @@ body {
 }
 
 .share-toolbar {
+    display: block; /* GUMBI DAJ NA NONE POL */
     margin-top: 20px;
-    display: none;
     text-align: center;
 }
 
 #share-twitter, #share-facebook, #share-instagram {
-    display: none;
+    display: block; /* GUMBI DAJ NA NONE POL */
     margin: 0 auto;
 }
